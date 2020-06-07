@@ -47,6 +47,8 @@ while True:
     else:
         font = cv2.FONT_HERSHEY_SIMPLEX
         cv2.putText(img1,chr(k),(a+i,b), font, 1,(0,0,0),3,cv2.LINE_AA)
+ # The shape[] attribute for numpy arrays returns the dimensions of the array. If Y has n rows and m columns, then Y.shape is (n,m).
+ # So Y.shape[0] is n and Y.shape[1] is m.
         if a+i >= img1.shape[1]:
             b = b+15
             i = 0
