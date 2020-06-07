@@ -1,5 +1,5 @@
 # Creating a Bouncing Ball Screensaver using OpenCV-Python
-# Task- Create a Window that we can write text on. If we don’t write for 10 seconds screensaver will start.
+# Task- Create a Window that we can write text on. If we don’t write for 5 seconds screensaver will start.
 
 import cv2
 import numpy as np
@@ -16,18 +16,15 @@ def screensaver():
         # Increment the position
         x = x+dx
         y = y+dy
-        cv2.circle(img,(x,y),20,(255,0,0),-1)
+        cv2.circle(img,(x,y),20,(255,130,140),-1)
         if k != -1:
             break
         # Change the sign of increment on collision with the boundary
-        if y >=480:
-            dy *= -1
-        elif y<=0:
-            dy *= -1
-        if x >=640:
-            dx *= -1
-        elif x<=0:
-            dx *= -1
+        if y >=480 or y<=0 :
+           dy *= -1
+
+        if x >=640 or x<=0 :
+           dx *= -1
     cv2.destroyAllWindows()
 
 # Background Image
@@ -37,7 +34,7 @@ i = 0
 a,b = 30,30
 while True:
     cv2.imshow('My Photo',img1)
-    k = cv2.waitKey(10000)
+    k = cv2.waitKey(5000)
     # If no key is pressed, display the screensaver
     if k == -1:
         screensaver()
