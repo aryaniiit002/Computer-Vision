@@ -10,9 +10,9 @@ def screensaver():
     x,y = 100,100
     while True:
         # Display the image
-        cv2.imshow('a',img)
+        cv2.imshow('Screensaver',img)
         k = cv2.waitKey(10)
-        img = np.zeros((480,640,3),dtype='uint8') 
+        img = np.zeros((480,640,3),dtype='uint8')  #This line will help in making different circle everytime loop runs.
         # Increment the position
         x = x+dx
         y = y+dy
@@ -36,12 +36,12 @@ img1 = cv2.imread('./images/aryan__bindal.jpg')
 i = 0 
 a,b = 30,30
 while True:
-    cv2.imshow('a',img1)
+    cv2.imshow('My Photo',img1)
     k = cv2.waitKey(10000)
     # If no key is pressed, display the screensaver
     if k == -1:
         screensaver()
-    # Press Escape to exit
+    # Press q to quit
     elif k == ord('q'):
         break
     # Otherwise write real time text on the image.
