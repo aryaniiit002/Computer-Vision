@@ -10,6 +10,7 @@ if not video.isOpened():
     
 while True:
     ret, frame = video.read()
+    # if frame is read correctly ret is True
      if not ret:
        print("Can't receive frame (stream end?). Exiting ...")
        break
