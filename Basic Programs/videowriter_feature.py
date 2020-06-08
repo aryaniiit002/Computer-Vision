@@ -34,3 +34,10 @@ while cap.isOpened():
 cap.release()
 out.release()
 cv.destroyAllWindows()
+
+
+#print(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+#print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))   
+#print(cap.get(cv2.CAP_PROP_FPS))
+
+#it is advisable to 1st use these features with webcam video to know your machine parameters.
