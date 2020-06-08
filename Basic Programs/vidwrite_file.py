@@ -11,7 +11,7 @@ cap = cv.VideoCapture(0)
 
 # Define the codec and create VideoWriter object
 fourcc = cv.VideoWriter_fourcc(*'XVID')
-out = cv.VideoWriter('output.mp4v', fourcc, 15, (1280,720))
+out = cv.VideoWriter('output.mp4v', fourcc, 10, (1280,720))
 
 while cap.isOpened():
     ret, frame = cap.read()
