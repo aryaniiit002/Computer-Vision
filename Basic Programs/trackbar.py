@@ -19,6 +19,9 @@ cv2.namedWindow('image')
 cv2.createTrackbar( "B", 'image', 0 , 255, mouse_event)
 cv2.createTrackbar( "G", 'image', 0 , 255, mouse_event)
 cv2.createTrackbar( "R", 'image', 0 , 255, mouse_event)
+#We can also create one switch in which application works only if switch is ON, otherwise screen is always black.
+switch = '0 : OFF \n1 : ON'
+cv2.createTrackbar(switch, 'image',0,1,mouse_event)
 
 
 while (1):
@@ -31,10 +34,11 @@ while (1):
     b = cv2.getTrackbarPos('B' , 'image')
     g = cv2.getTrackbarPos('G' , 'image')
     r = cv2.getTrackbarPos('R' , 'image')
+    s = cv2.getTrackbarPos(switch,'image')
 
-    img[:] = [b, g, r]
+    if s == 0:
+        img[:] = 0
+    else:
+        img[:] = [b,g,r]
 
 cv2.destroyAllWindows()
-
-
-#We can also create one switch in which application works only if switch is ON, otherwise screen is always black.
