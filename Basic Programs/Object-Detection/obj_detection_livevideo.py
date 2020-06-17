@@ -42,14 +42,14 @@ while True:
 #those region in mask should be white, everything else is black
     mask = cv2.inRange(hsv, l_b, h_b)
 
-    res = cv2.bitwise_and(frame,frame, mask= mask)
+    result = cv2.bitwise_and(frame,frame, mask= mask)
 #What happened is, the spatial locations where the mask had a pixel value zero (black), 
 #became pixel value zero in the result image.
 #The locations where the mask had pixel value 255 (white), the resulting image retained it's original value.
 
     cv2.imshow('Original',frame)
     #cv2.imshow('hsv',hsv)
-    cv2.imshow('res',res)
+    cv2.imshow('result',result)
     cv2.imshow('mask',mask)
 
     k = cv2.waitKey(10) & 0xFF
