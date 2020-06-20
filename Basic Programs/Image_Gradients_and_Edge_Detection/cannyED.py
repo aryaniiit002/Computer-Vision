@@ -30,5 +30,4 @@ while (1):
     cv2.imshow('original image',img)
     cv2.imshow('canny Image',canny)
 
-
 cv2.destroyAllWindows()
