@@ -10,7 +10,7 @@
 #   2)  Find the Gaussian Pyramids for apple and orange (in this particular example, number of levels is 6)
 #   3)  From Gaussian Pyramids, find their Laplacian Pyramids
 #   4)  Now join the left half of apple and right half of orange in each levels of Laplacian Pyramids
-#   5)  Finally from this joint image pyramids, reconstruct the original image.
+#   5)  Finally from this joint image pyramids , reconstruct the original image by combining the Gaussian and laplacian Images of same level
 
 import cv2
 import numpy as np
@@ -67,8 +67,8 @@ for apple_lap, orange_lap in zip(lp_apple, lp_orange):
 # now reconstruct by adding the gaussian and laplacian images of same level
 apple_orange_reconstruct = apple_orange_pyramid[0]
 for i in range(1, 6):
-    apple_orange_reconstruct = cv2.pyrUp(apple_orange_reconstruct)   # gives colored image
-    apple_orange_reconstruct = cv2.add(apple_orange_pyramid[i], apple_orange_reconstruct)
+    apple_orange_reconstruct = cv2.pyrUp(apple_orange_reconstruct)   # gives constructed colored image
+    apple_orange_reconstruct = cv2.add(apple_orange_pyramid[i], apple_orange_reconstruct) #merging of laplacian and gaussian image
 
 cv2.imshow("apple", apple)
 cv2.imshow("orange", orange)
