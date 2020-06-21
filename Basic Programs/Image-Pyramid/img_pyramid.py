@@ -44,7 +44,7 @@ arr_gp = [duplicate]
 for i in range(3):
     duplicate= cv2.pyrDown(duplicate)
     arr_gp.append(duplicate)
-    #cv2.imshow(str(i),duplicate)
+    cv2.imshow(str(i),duplicate)
 
 #2nd Laplacian Pyramids - 
 #Laplacian Pyramids are formed from the Gaussian Pyramids.
