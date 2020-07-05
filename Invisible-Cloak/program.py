@@ -11,13 +11,13 @@ fourcc = cv2.VideoWriter_fourcc(*'XVID')
 out = cv2.VideoWriter('output_video.avi',fourcc, 10.0,(int(cap_video.get(3)),int(cap_video.get(4))))
 
 # give the camera to warm up 
-time.sleep(1)  
+time.sleep(3)  
 rate = 0 
 background = 0 
   
 # capturing the background in range of 60 you should have video that have some seconds 
 # dedicated to background frame so that it could easily save the background image 
-for i in range(60): 
+for i in range(30): 
     ret, background = cap_video.read() 
     if ret == False : 
         continue 
